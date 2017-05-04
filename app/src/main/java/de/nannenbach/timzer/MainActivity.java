@@ -94,29 +94,31 @@ public class MainActivity extends AppCompatActivity {
     private void addRow(int i) {
         GsmCellLocation cellLocation = (GsmCellLocation) telephonyManager.getCellLocation();
 
-        int cid = cellLocation.getCid();
-        int lac = cellLocation.getLac();
-        TableRow tbrow = new TableRow(this);
-        TextView t1v = new TextView(this);
-        t1v.setText(""+cid);
-        t1v.setTextColor(Color.WHITE);
-        t1v.setGravity(Gravity.CENTER);
-        tbrow.addView(t1v);
-        TextView t2v = new TextView(this);
-        t2v.setText(""+lac);
-        t2v.setTextColor(Color.WHITE);
-        t2v.setGravity(Gravity.CENTER);
-        tbrow.addView(t2v);
-        TextView t3v = new TextView(this);
-        t3v.setText("test" + i);
-        t3v.setTextColor(Color.WHITE);
-        t3v.setGravity(Gravity.CENTER);
-        tbrow.addView(t3v);
-        TextView t4v = new TextView(this);
-        t4v.setText("" + i * 15 / 32 * 10);
-        t4v.setTextColor(Color.WHITE);
-        t4v.setGravity(Gravity.CENTER);
-        tbrow.addView(t4v);
-        stk.addView(tbrow);
+        if(cellLocation != null) {
+            int cid = cellLocation.getCid();
+            int lac = cellLocation.getLac();
+            TableRow tbrow = new TableRow(this);
+            TextView t1v = new TextView(this);
+            t1v.setText("" + cid);
+            t1v.setTextColor(Color.WHITE);
+            t1v.setGravity(Gravity.CENTER);
+            tbrow.addView(t1v);
+            TextView t2v = new TextView(this);
+            t2v.setText("" + lac);
+            t2v.setTextColor(Color.WHITE);
+            t2v.setGravity(Gravity.CENTER);
+            tbrow.addView(t2v);
+            TextView t3v = new TextView(this);
+            t3v.setText("test" + i);
+            t3v.setTextColor(Color.WHITE);
+            t3v.setGravity(Gravity.CENTER);
+            tbrow.addView(t3v);
+            TextView t4v = new TextView(this);
+            t4v.setText("" + i * 15 / 32 * 10);
+            t4v.setTextColor(Color.WHITE);
+            t4v.setGravity(Gravity.CENTER);
+            tbrow.addView(t4v);
+            stk.addView(tbrow);
+        }
     }
 }
