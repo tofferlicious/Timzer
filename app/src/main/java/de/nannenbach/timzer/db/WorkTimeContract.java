@@ -14,7 +14,13 @@ public class WorkTimeContract {
     /* Inner class that defines the table contents */
     public static class WorkTimeEntry implements BaseColumns {
         public static final String TABLE_NAME = "entry";
-        public static final String COLUMN_NAME_TITLE = "title";
-        public static final String COLUMN_NAME_SUBTITLE = "subtitle";
+        public static final String COLUMN_NAME_DATE = "date";
+        public static final String COLUMN_NAME_START = "start";
+        public static final String COLUMN_NAME_END = "end";
+        public static final String COLUMN_NAME_BREAK = "break";
+        public static final String COLUMN_NAME_INTERRUPTION = "interruption";
+        public static final String COLUMN_NAME_TRAVEL_TIME = "travel_time";
+        public static final String COLUMN_NAME_STATUS = "status";
+
     }
 }
